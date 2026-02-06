@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: kupipodariday_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+      PYTHONWARNINGS: "ignore"
+    ports:
+      - "${PGADMIN_PORT}:80"   # доступ к pgAdmin: http://localhost:5050
+    depends_on:
+      - postgres
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  postgres_data:
+  pgadmin_data:
