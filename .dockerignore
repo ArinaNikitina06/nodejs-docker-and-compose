@@ -1,0 +1,15 @@
+**/node_modules
+**/dist
+**/build
+**/.cache
+**/.parcel-cache
+**/coverage
+
+.git
+.git/**
+
+.env
+.env.*
+
+.cursor
+.cursor/**
