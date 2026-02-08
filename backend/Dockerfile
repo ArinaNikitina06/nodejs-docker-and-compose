@@ -17,15 +17,16 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-RUN npm i -g npm@9
+RUN npm i -g npm@9 pm2
 
 COPY --chown=node:node package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 
 COPY --from=builder --chown=node:node /app/dist ./dist
+COPY --chown=node:node ecosystem.config.js ./ecosystem.config.js
 
 USER node
 
 EXPOSE 3000
 
-CMD ["node", "dist/main"]
+CMD ["pm2-runtime", "ecosystem.config.js"]
