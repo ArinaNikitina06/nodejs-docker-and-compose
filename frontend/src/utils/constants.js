@@ -1,4 +1,10 @@
-export const URL = "http://167.235.140.175:3001";
+const defaultUrl =
+  process.env.NODE_ENV === "production" ? "/api" : "http://localhost:3000";
+
+export const URL = (process.env.REACT_APP_API_URL || defaultUrl).replace(
+  /\/$/,
+  "",
+);
 
 export const MINIMUM_PASSWORD_LENGTH = 3;
 export const MINIMUM_USERNAME_LENGTH = 3;
