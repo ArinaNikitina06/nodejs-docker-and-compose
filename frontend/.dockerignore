@@ -1,0 +1,12 @@
+node_modules
+build
+dist
+coverage
+.cache
+.parcel-cache
+
+.git
+.git/**
+
+.env
+.env.*
