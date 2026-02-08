@@ -3,8 +3,8 @@
 ## Адреса
 
 - IP адрес: x.x.x.x
-- Frontend: https://example.com
-- Backend: https://api.example.com
+- Frontend: https://...
+- Backend: https://...
 
 ## Локальный запуск через Docker Compose
 
@@ -22,8 +22,8 @@ docker compose up --build
 
 После запуска:
 
-- фронтенд: `http://localhost/`
-- бэкенд: `http://localhost:3000/`
+- фронтенд: `http://localhost:8081/`
+- бэкенд: `http://localhost:4000/`
 
 ## Переменные окружения
 
@@ -35,6 +35,7 @@ docker compose up --build
 - `POSTGRES_USER`
 - `POSTGRES_PASSWORD`
 - `POSTGRES_DB`
+- `POSTGRES_PGDATA`
 
 Фронтенд использует:
 
