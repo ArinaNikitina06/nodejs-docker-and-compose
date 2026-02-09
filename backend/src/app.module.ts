@@ -9,6 +9,7 @@ import { WishesModule } from './features/wishes/wishes.module';
 import { OffersModule } from './features/offers/offers.module';
 import { WishlistModule } from './features/wishlist/wishlist.module';
 import { UsersDomainModule } from './features/users-domain/users-domain.module';
+import { HealthController } from './health.controller';
 
 const featuredModules = [
   AuthModule,
@@ -33,6 +34,6 @@ const featuredModules = [
     ...featuredModules,
 
   ],
-  controllers: [],
+  controllers: [HealthController],
 })
 export class AppModule {}
