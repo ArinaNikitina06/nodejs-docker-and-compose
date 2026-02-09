@@ -2,9 +2,9 @@
 
 ## Адреса
 
-- IP адрес: x.x.x.x
-- Frontend: https://...
-- Backend: https://...
+- IP адрес: 158.160.197.159
+- Frontend: https://kpdarinanikitina.nomorepartiessbs.ru
+- Backend: https://api.kpdarinanikitina.nomorepartiessbs.ru
 
 ## Локальный запуск через Docker Compose
 
